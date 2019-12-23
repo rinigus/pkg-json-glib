@@ -55,9 +55,6 @@ the functionality of the installed json-glib package.
 
 %postun -n json-glib -p /sbin/ldconfig
 
-%find_lang json-glib-1.0
-
-%files -f json-glib-1.0.lang
 %doc NEWS
 %license COPYING
 %{_libdir}/lib%{name}*.so.*
