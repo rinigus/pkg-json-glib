@@ -51,6 +51,10 @@ the functionality of the installed json-glib package.
 %install
 %meson_install
 
+%post -n json-glib -p /sbin/ldconfig
+
+%postun -n json-glib -p /sbin/ldconfig
+
 %find_lang json-glib-1.0
 
 %files -f json-glib-1.0.lang
