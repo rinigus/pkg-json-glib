@@ -9,12 +9,10 @@ License:	LGPLv2+
 URL:		https://wiki.gnome.org/Projects/JsonGlib
 Source0:	http://download.gnome.org/sources/%{name}/1.4/%{name}-%{version}.tar.xz
 
-BuildRequires:	docbook-style-xsl
 BuildRequires:	gettext
 BuildRequires:	glib2-devel >= %{glib2_version}
 BuildRequires:	gobject-introspection-devel
 BuildRequires:	meson
-BuildRequires:	/usr/bin/xsltproc
 
 Requires:	glib2%{?_isa} >= %{glib2_version}
 
@@ -46,7 +44,7 @@ the functionality of the installed json-glib package.
 
 
 %build
-%meson -Ddocs=false -Dman=true
+%meson -Ddocs=false -Dman=false
 %meson_build
 
 
@@ -72,8 +70,6 @@ the functionality of the installed json-glib package.
 %{_datadir}/gir-1.0/Json-1.0.gir
 %{_bindir}/json-glib-format
 %{_bindir}/json-glib-validate
-%{_mandir}/man1/json-glib-format.1*
-%{_mandir}/man1/json-glib-validate.1*
 
 %files tests
 %{_libexecdir}/installed-tests/
