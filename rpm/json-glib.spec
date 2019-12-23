@@ -13,7 +13,6 @@ BuildRequires:	docbook-style-xsl
 BuildRequires:	gettext
 BuildRequires:	glib2-devel >= %{glib2_version}
 BuildRequires:	gobject-introspection-devel
-BuildRequires:	gtk-doc
 BuildRequires:	meson
 BuildRequires:	/usr/bin/xsltproc
 
@@ -43,11 +42,11 @@ the functionality of the installed json-glib package.
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{version}/json-glib
 
 
 %build
-%meson -Ddocs=true -Dman=true
+%meson -Ddocs=false -Dman=true
 %meson_build
 
 
@@ -70,7 +69,6 @@ the functionality of the installed json-glib package.
 %{_libdir}/lib%{name}*.so
 %{_libdir}/pkgconfig/%{name}-1.0.pc
 %{_includedir}/%{name}-1.0/
-%{_datadir}/gtk-doc/
 %{_datadir}/gir-1.0/Json-1.0.gir
 %{_bindir}/json-glib-format
 %{_bindir}/json-glib-validate
