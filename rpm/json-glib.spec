@@ -53,10 +53,6 @@ the functionality of the installed json-glib package.
 
 %find_lang json-glib-1.0
 
-
-%ldconfig_scriptlets
-
-
 %files -f json-glib-1.0.lang
 %doc NEWS
 %license COPYING
