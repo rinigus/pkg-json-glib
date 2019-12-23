@@ -55,10 +55,12 @@ the functionality of the installed json-glib package.
 
 %postun -n json-glib -p /sbin/ldconfig
 
+%files
 %doc NEWS
 %license COPYING
 %{_libdir}/lib%{name}*.so.*
 %{_libdir}/girepository-1.0/Json-1.0.typelib
+%{_datadir}/locale/*/*/json-glib*mo
 
 %files devel
 %{_libdir}/lib%{name}*.so
